@@ -1,0 +1,28 @@
+SQL code to create tables in database
+
+USE [NWClashData]
+GO
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[clash_test](
+    [id] [nvarchar](255) NOT NULL PRIMARY KEY,
+    [name] [nvarchar](1024) NOT NULL
+) ON [PRIMARY]
+GO
+CREATE TABLE [dbo].[clash_results](
+    [key_id] nvarchar(255) NOT NULL PRIMARY KEY,
+    [test_id] [nvarchar](1024) NOT NULL,
+    [clash_guid] [nvarchar](1024) NOT NULL,
+    [clash_id] [nvarchar](1024) NOT NULL,
+    [date_created] [nvarchar](1024) NOT NULL,
+    [group_name] [nvarchar](1024) NOT NULL,
+    [status] [nvarchar](1024) NOT NULL,
+    [element_1_guid] [nvarchar](1024) NOT NULL,
+    [element_2_guid] [nvarchar](1024) NOT NULL,
+    [export_date] [nvarchar](1024) NOT NULL,
+    [assigned_to] [nvarchar](1024) NOT NULL,
+    [project_num] [nvarchar](1024) NOT NULL
+) ON [PRIMARY]
+GO

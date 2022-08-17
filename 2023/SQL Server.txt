@@ -1,0 +1,8 @@
+Navis Clash Data SQL Server
+
+USBLB1DB002\APP05
+
+
+Navis clash database
+
+NWClashData
