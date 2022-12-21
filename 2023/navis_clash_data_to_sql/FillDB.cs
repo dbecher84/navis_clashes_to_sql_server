@@ -35,6 +35,7 @@ namespace fill_in_db
         public static string SQL_test()
         {
             String cs = "Data Source = USBLB1DB002\\APP05;Initial Catalog=NWClashData;Integrated Security=true";
+
             try
             {
                 SqlConnection conn = new SqlConnection(cs);

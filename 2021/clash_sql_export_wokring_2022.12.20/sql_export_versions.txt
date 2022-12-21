@@ -1,0 +1,5 @@
+Version History
+
+2022.1.0.0 - Inital version distributed
+
+2022.1.0.1 - added 99.99 test. added icons in Navis and version info in navis flyout window

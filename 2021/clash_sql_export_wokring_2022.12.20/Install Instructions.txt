@@ -1,0 +1,10 @@
+Install Instructions
+
+1 - Copy the "clash_sql_export" folder to the follwing location:
+    C:\Program Files\Autodesk\Navisworks Manage 2021\Plugins
+	-this folder should conatin the dll file and the resources folder
+
+    Note: if the clash_sql_export folder already exists just overwrite the existing folder.
+
+2 - Install Power BI Desktop app (download from microsoft)
+    (If updating the plugin make sure to check the version and update if necessary.)

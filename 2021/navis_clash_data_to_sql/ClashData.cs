@@ -21,7 +21,7 @@ using System.Text.RegularExpressions;
 namespace ClashData
 {
     //plugin attributes require Name, DeveloperID and optional parameters
-    [PluginAttribute("clash_sql_export", "Derek B", DisplayName = "Export Clashes to SQL", ToolTip = "Exports clashs data to SQL Database.", ExtendedToolTip = "Version 2022.1.0.1")]
+    [PluginAttribute("clash_sql_export", "Derek B", DisplayName = "Export Clashes to SQL", ToolTip = "Exports clashs data to SQL Database.", ExtendedToolTip = "Version 2022.1.0.2")]
     [AddInPluginAttribute(AddInLocation.AddIn, Icon = "C:\\Program Files\\Autodesk\\Navisworks Manage 2021\\Plugins\\clash_sql_export\\resources\\16x16_sql_export_img.bmp",
         LargeIcon = "C:\\Program Files\\Autodesk\\Navisworks Manage 2021\\Plugins\\clash_sql_export\\resources\\32x32_sql_export_img.bmp")]
 
@@ -42,6 +42,11 @@ namespace ClashData
             {
                 string projectNum = regMatch.Value;
                 MessageBox.Show(projectNum, "Project Number from File Name.");
+
+                int startPosition = filePath.LastIndexOf("\\") + 1;
+                int endPosition = filePath.LastIndexOf(".");
+                string modelName = filePath.Substring(startPosition, endPosition - startPosition);
+                //MessageBox.Show(modelName, "model name");
 
                 //-----------------------------------------------------------------------------------------
                 //Check if Clash Test have even been created
@@ -138,6 +143,7 @@ namespace ClashData
                                 dt_test_data.Columns.Add(new DataColumn("export_date", typeof(System.String)));
                                 dt_test_data.Columns.Add(new DataColumn("assigned_to", typeof(System.String)));
                                 dt_test_data.Columns.Add(new DataColumn("project_num", typeof(System.String)));
+                                dt_test_data.Columns.Add(new DataColumn("model_name", typeof(System.String)));
 
 
                                 foreach (SavedItem issue in test.Children)
@@ -152,19 +158,19 @@ namespace ClashData
 
                                         if (clashResult.Item1 != null && clashResult.Item2 != null)
                                         {
-                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, clashResult.Item1.InstanceGuid, clashResult.Item2.InstanceGuid, export_date, clashResult.AssignedTo, projectNum);
+                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, clashResult.Item1.InstanceGuid, clashResult.Item2.InstanceGuid, export_date, clashResult.AssignedTo, projectNum, modelName);
                                         }
                                         if (clashResult.Item1 == null && clashResult.Item2 == null)
                                         {
-                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, "no_guid", "no_guid", export_date, clashResult.AssignedTo, clashResult.Guid + export_date, projectNum);
+                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, "no_guid", "no_guid", export_date, clashResult.AssignedTo, clashResult.Guid + export_date, projectNum, modelName);
                                         }
                                         if (clashResult.Item1 != null && clashResult.Item2 == null)
                                         {
-                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, clashResult.Item1.InstanceGuid, "no_guid", export_date, clashResult.AssignedTo, projectNum);
+                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, clashResult.Item1.InstanceGuid, "no_guid", export_date, clashResult.AssignedTo, projectNum, modelName);
                                         }
                                         if (clashResult.Item1 == null && clashResult.Item2 != null)
                                         {
-                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, "no_guid", clashResult.Item2.InstanceGuid, export_date, clashResult.AssignedTo, projectNum);
+                                            dt_test_data.Rows.Add(clashResult.Guid + export_date, testId, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, "no_guid", clashResult.Item2.InstanceGuid, export_date, clashResult.AssignedTo, projectNum, modelName);
                                         }
 
                                         //dt_test_data.Rows.Add(testId, testName, clashResult.Guid, clashResult.DisplayName, newTime, "not_grouped", clashResult.Status, clashResult.Item1.InstanceGuid, clashResult.Item2.InstanceGuid, export_date);
@@ -193,19 +199,19 @@ namespace ClashData
 
                                                 if (gclashResult.Item1 != null && gclashResult.Item2 != null)
                                                 {
-                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, gclashResult.Item1.InstanceGuid, gclashResult.Item2.InstanceGuid, export_date, gclashResult.AssignedTo, projectNum);
+                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, gclashResult.Item1.InstanceGuid, gclashResult.Item2.InstanceGuid, export_date, gclashResult.AssignedTo, projectNum, modelName);
                                                 }
                                                 if (gclashResult.Item1 == null && gclashResult.Item2 == null)
                                                 {
-                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, "no_guid", "no_guid", export_date, gclashResult.AssignedTo, projectNum);
+                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, "no_guid", "no_guid", export_date, gclashResult.AssignedTo, projectNum, modelName);
                                                 }
                                                 if (gclashResult.Item1 != null && gclashResult.Item2 == null)
                                                 {
-                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, gclashResult.Item1.InstanceGuid, "no_guid", export_date, gclashResult.AssignedTo, projectNum);
+                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, gclashResult.Item1.InstanceGuid, "no_guid", export_date, gclashResult.AssignedTo, projectNum, modelName);
                                                 }
                                                 if (gclashResult.Item1 == null && gclashResult.Item2 != null)
                                                 {
-                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, "no_guid", gclashResult.Item2.InstanceGuid, export_date, gclashResult.AssignedTo, projectNum);
+                                                    dt_test_data.Rows.Add(gclashResult.Guid + export_date, testId, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, "no_guid", gclashResult.Item2.InstanceGuid, export_date, gclashResult.AssignedTo, projectNum, modelName);
                                                 }
 
                                                 //dt_test_data.Rows.Add(testId, testName, gclashResult.Guid, gclashResult.DisplayName, newTime, group_name, gclashResult.Status, gclashResult.Item1.InstanceGuid, gclashResult.Item2.InstanceGuid, export_date);
