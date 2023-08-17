@@ -940,6 +940,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
             }
         }
     }
@@ -974,7 +982,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Clash, Version=20.0.1393.45, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Clash, Version=20.0.1399.50, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_0A3BAB0E14DE944F5685DBC228F46BCF"
@@ -1072,7 +1080,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:navisworks.gui.interface, Version=20.0.1393.45, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:navisworks.gui.interface, Version=20.0.1399.50, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_275EF1F2DBBC836183D52F1A753F0377"
@@ -1134,7 +1142,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:navisworks.gui.common, Version=20.0.1393.45, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:navisworks.gui.common, Version=20.0.1399.50, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_2DDF4BDEAA2F79529749E2284F530B49"
@@ -1382,7 +1390,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:navisworks.gui.roamer, Version=20.0.1393.45, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:navisworks.gui.roamer, Version=20.0.1399.50, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_7BE56F4E1BB758F493E7F635053A96F6"
@@ -1475,7 +1483,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:navisworks.gui.generic, Version=20.0.1393.45, Culture=neutral, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:navisworks.gui.generic, Version=20.0.1399.50, Culture=neutral, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_8C20037DD61B367702B5FC9F3A4E07F8"
@@ -1805,7 +1813,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Controls, Version=20.0.1393.45, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Controls, Version=20.0.1399.50, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_B5DE3A08C55E73694AD7C62418547495"
@@ -1949,7 +1957,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Navisworks.Glue.Rest.Interop, Version=20.0.1393.45, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:Navisworks.Glue.Rest.Interop, Version=20.0.1399.50, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_C6A62A56894A97A965DABB6D529485A7"
@@ -2016,7 +2024,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:navisworks.roamer.clr, Version=20.0.1393.45, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:navisworks.roamer.clr, Version=20.0.1399.50, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_D49189B9B6554356AE0A4BBF92BBC7CC"
@@ -2078,7 +2086,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Automation, Version=20.0.1393.45, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Automation, Version=20.0.1399.50, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_DFC5112C597AC844D1AF6A979370716A"
@@ -2264,7 +2272,7 @@
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Api, Version=20.0.1393.45, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
+            "AssemblyAsmDisplayName" = "8:Autodesk.Navisworks.Api, Version=20.0.1399.50, Culture=neutral, PublicKeyToken=d85e58fa5af9b484, processorArchitecture=AMD64"
                 "ScatterAssemblies"
                 {
                     "_F261E92B1F01AAD090A9317FE065B091"
@@ -2389,15 +2397,15 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:navis_clash_exporter_2023"
-        "ProductCode" = "8:{DC68D446-F892-49C4-97B0-B514C899A996}"
-        "PackageCode" = "8:{8E8EA253-DB2A-4180-A9F0-C2571B322B91}"
+        "ProductCode" = "8:{7061CF7F-B7AE-421E-8111-9008A0354BB1}"
+        "PackageCode" = "8:{A4134F58-D562-4012-AB91-DF5AA258CB0F}"
         "UpgradeCode" = "8:{AC10BAC0-A50A-46A5-991E-D088ED8ABF3B}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:FALSE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:23.1.0"
         "Manufacturer" = "8:IPS-Integrated Project Services LLC"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"

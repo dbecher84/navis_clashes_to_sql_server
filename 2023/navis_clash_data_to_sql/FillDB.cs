@@ -29,13 +29,13 @@ namespace fill_in_db
         //    }
         //}
         ////-------------------------------------------------------------------------------------------
-        
+        ///
+        static String cs = "Data Source = USBLB1DB002\\APP05;Initial Catalog=NWClashData;Integrated Security=true";
+        //static String cs = "Data Source = USBLB1DB002\\APP05;Initial Catalog=NWClashDataTest;Integrated Security=true
 
         ////Code used to test connection to database-----------------------------------------------------
         public static string SQL_test()
         {
-            String cs = "Data Source = USBLB1DB002\\APP05;Initial Catalog=NWClashData;Integrated Security=true";
-
             try
             {
                 SqlConnection conn = new SqlConnection(cs);
@@ -70,8 +70,6 @@ namespace fill_in_db
 
         public static string Main_C(DataTable input_table)
         {
-            String cs = "Data Source = USBLB1DB002\\APP05;Initial Catalog=NWClashData;Integrated Security=true";
-            //String cs = "Data Source = USBLB1DB002\\APP05;Initial Catalog=NWClashDataTest;Integrated Security=true";
             try
             {
                 SqlConnection conn = new SqlConnection(cs);
@@ -112,7 +110,7 @@ namespace fill_in_db
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error with connecting to database.");
+                MessageBox.Show(ex.Message, "Error connecting to database.");
                 string itemResult = "Connection Failed";
                 return itemResult;
             }

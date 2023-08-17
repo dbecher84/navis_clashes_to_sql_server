@@ -35,18 +35,18 @@ namespace ClashData
             var allTests_copy = documentClash.TestsData.CreateCopy();
             //DocumentModels docModel = document.Models;
 
-            string filePath = Autodesk.Navisworks.Api.Application.MainDocument.FileName.ToString();
+            string navisFilePath = Autodesk.Navisworks.Api.Application.MainDocument.FileName.ToString();
             var regMatchNum = @"([0-9]{5})";
-            Match regMatch = Regex.Match(filePath, regMatchNum);
+            Match regMatch = Regex.Match(navisFilePath, regMatchNum);
 
             if (regMatch.Success)
             {
                 string projectNum = regMatch.Value;
                 MessageBox.Show(projectNum, "Project Number from File Name.");
 
-                int startPosition = filePath.LastIndexOf("\\") + 1;
-                int endPosition = filePath.LastIndexOf(".");
-                string modelName = filePath.Substring(startPosition, endPosition-startPosition);
+                int startPosition = navisFilePath.LastIndexOf("\\") + 1;
+                int endPosition = navisFilePath.LastIndexOf(".");
+                string modelName = navisFilePath.Substring(startPosition, endPosition-startPosition);
                 //MessageBox.Show(modelName, "model name");
 
                 //-----------------------------------------------------------------------------------------
@@ -105,6 +105,7 @@ namespace ClashData
 
                     ////good to proceed indicator collecting and writing clashes
                     string proceed = "yes";
+
                     ////test database connection
                     string dbTestResult = fill_in_db.FillDB.SQL_test();
 
